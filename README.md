@@ -47,18 +47,14 @@ This project is designed as a **portfolio-ready demonstration** of skills in:
 
 ## 📁 Project Structure
 
-StudentManagementAPI/
-├── Controllers/ # API controllers (StudentsController, CoursesController)
-├── Data/ # ApplicationDbContext.cs for EF Core
-├── Models/ # Student.cs, Course.cs
-├── Properties/
-├── appsettings.json # Configuration file, includes connection string
-├── Program.cs # Main entry point
-├── StudentManagementAPI.csproj
-└── .gitignore
-
-yaml
-Copy code
+- Controllers/       (API controllers: StudentsController, CoursesController)  
+- Data/              (ApplicationDbContext.cs for EF Core)  
+- Models/            (Student.cs, Course.cs)  
+- Properties/  
+- appsettings.json  
+- Program.cs  
+- StudentManagementAPI.csproj  
+- .gitignore  
 
 ---
 
@@ -72,77 +68,69 @@ Copy code
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
-
-```bash
+### Clone the repository
+```
 git clone https://github.com/<YourUsername>/StudentManagementAPI.git
 cd StudentManagementAPI
-Restore dependencies
+```
 
-bash
-Copy code
+### Restore dependencies
+```
 dotnet restore
-Apply EF Core migrations to create the database
+```
 
-bash
-Copy code
+### Apply EF Core migrations to create the database
+```
 dotnet ef database update
-This uses LocalDB (localdb)\MSSQLLocalDB which comes with Visual Studio.
-EF Core will automatically create the StudentDB database and necessary tables (Students and Courses).
+```
 
-Run the API
+> This uses LocalDB `(localdb)\MSSQLLocalDB`, which comes automatically with Visual Studio.  
+> EF Core will automatically create the `StudentDB` database and the necessary tables: `Students` and `Courses`.
 
-bash
-Copy code
+### Run the API
+```
 dotnet run
-By default, the API will run at:
+```
 
-arduino
-Copy code
-http://localhost:5000
-Swagger UI is available at:
+- By default, the API will run at: [http://localhost:5000](http://localhost:5000)  
+- Swagger UI is available at: [http://localhost:5000/swagger](http://localhost:5000/swagger)
 
-bash
-Copy code
-http://localhost:5000/swagger
-Test the API using Swagger
+### Test the API using Swagger
 
-GET /api/Students → Returns all students
-
-POST /api/Students → Add a new student
+- **GET /api/Students** → Returns all students  
+- **POST /api/Students** → Add a new student  
 
 Example JSON:
 
-json
-Copy code
+```
 {
   "fullName": "John Doe",
   "email": "john@example.com",
   "dateOfBirth": "2000-05-15"
 }
-GET /api/Courses → Returns all courses
+```
 
-POST /api/Courses → Add a new course
+### Test the API using Swagger (Courses)
+
+- **GET /api/Courses** → Returns all courses  
+- **POST /api/Courses** → Add a new course  
 
 Example JSON:
 
-json
-Copy code
+```
 {
   "title": "Mathematics",
   "credits": 5
 }
+```
+
 Optional: Inspect database
+- Open SQL Server Object Explorer in Visual Studio
+- Expand (localdb)\MSSQLLocalDB → Databases → StudentDB
+- You should see Students and Courses tables created automatically
 
-Open SQL Server Object Explorer in Visual Studio
-
-Expand (localdb)\MSSQLLocalDB → Databases → StudentDB
-
-You should see Students and Courses tables created automatically
-
-🗂 Database Schema
-mermaid
-Copy code
+## 🗂 Database Schema
+```
 erDiagram
     STUDENTS {
         int Id PK
@@ -155,36 +143,35 @@ erDiagram
         string Title
         int Credits
     }
-This Mermaid diagram will render on GitHub to show table structure.
+```
 
-⚙️ Technologies Used
-C# / .NET 8
+## ⚙️ Technologies Used
 
-ASP.NET Core Web API
+- C# / .NET 8
+- ASP.NET Core Web API
+- Entity Framework Core 8
+- LocalDB (SQL Server)
+- Swagger / OpenAPI
+- Git for version control
 
-Entity Framework Core 8
 
-LocalDB (SQL Server)
+## 📝 Notes
 
-Swagger / OpenAPI
+- Database is created automatically using Code-First EF Core migrations
+- LocalDB allows easy setup without installing full SQL Server
+- `.gitignore` is configured to exclude build artifacts, user-specific files, and LocalDB files
 
-Git for version control
+---
 
-📝 Notes
-Database is created automatically using Code-First EF Core migrations
+## 📌 Future Improvements
 
-LocalDB allows easy setup without installing full SQL Server
+- Add authentication & authorization (JWT or Identity)
+- Add pagination and filtering for Students/Courses endpoints
+- Connect a Vue.js frontend for a full-stack portfolio demo
+- Deploy to Azure or AWS
 
-.gitignore is configured to exclude build artifacts, user-specific files, and LocalDB files
+---
 
-📌 Future Improvements
-Add authentication & authorization (JWT or Identity)
+## 📂 License
 
-Add pagination and filtering for Students/Courses endpoints
-
-Connect a Vue.js frontend for a full-stack portfolio demo
-
-Deploy to Azure or AWS
-
-📂 License
 This project is open source and free to use for portfolio purposes.
