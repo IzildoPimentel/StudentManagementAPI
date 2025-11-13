@@ -1,0 +1,38 @@
+﻿# Build Folders
+bin/
+obj/
+out/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+
+# LocalDB / SQL Server
+*.mdf
+*.ldf
+*.db
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Rider IDE
+.idea/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Node / Frontend (if you add Vue/JS later)
+node_modules/
+dist/
+
+# Ignore environment files
+.env
