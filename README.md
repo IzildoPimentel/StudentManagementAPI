@@ -1,5 +1,5 @@
-StudentManagementAPI
-📄 Overview
+# StudentManagementAPI
+## 📄 Overview
 
 StudentManagementAPI is a fully functional ASP.NET Core Web API project built using .NET 8. It demonstrates a complete CRUD (Create, Read, Update, Delete) workflow for managing Students and Courses. The project uses Entity Framework Core with LocalDB for a simple, out-of-the-box database experience, and comes with Swagger integration for easy API testing.
 
@@ -17,7 +17,7 @@ Git version control and clean project structure
 
 Swagger for API documentation and testing
 
-🛠️ Features
+### 🛠️ Features
 
 Students Management
 
